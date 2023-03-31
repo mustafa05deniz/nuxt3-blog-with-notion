@@ -1,26 +1,23 @@
 <template>
-  <nav class="navbar bg-dark bs-body-color text-primary" data-bs-theme="dark">
+  <nav
+    class="navbar navbar-expand-lg bg-body-tertiary rounded"
+    aria-label="Thirteenth navbar example"
+  >
     <div class="container-fluid">
-      <a class="navbar-brand text-white" href="#">Nuxt3 UI Sync</a>
       <button
         class="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
+        data-bs-target="#navbarsExample11"
+        aria-controls="navbarsExample11"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div id="navbarSupportedContent" class="collapse navbar-collapse">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <NuxtLink class="nav-link active" aria-current="page" to="/">
-              Home
-            </NuxtLink>
-          </li>
-        </ul>
+
+      <div id="navbarsExample11" class="collapse navbar-collapse d-lg-flex">
+        <a class="navbar-brand col-lg-3 me-0" href="#">Nuxt3 UI Sync</a>
       </div>
     </div>
   </nav>

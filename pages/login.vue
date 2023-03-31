@@ -38,7 +38,11 @@ const form = ref({
               />
               <label for="floatingPassword">Password</label>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">
+            <button
+              class="w-100 btn btn-lg btn-primary"
+              :disabled="!(form.email && form.password)"
+              type="submit"
+            >
               Login
             </button>
           </form>

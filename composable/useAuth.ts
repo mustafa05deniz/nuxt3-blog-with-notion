@@ -1,27 +1,29 @@
 export const useAuth = () => {
   // login
-  function login() {
+  const userTokenCookie = useCookie("user");
+  const tokenCookie = useCookie("token");
+  function login(payload: { email: string }) {
     const data = {
       idToken: "a",
+      email: payload.email,
     };
-    const userTokenCookie = useCookie("token");
-    userTokenCookie.value = data.idToken;
+    tokenCookie.value = data.idToken;
+    userTokenCookie.value = data.email;
     useRouter().push("/");
   }
 
-  // register
-  function register() {
-    const data = {
-      idToken: "a",
-    };
-    // use cookie
-    const userTokenCookie = useCookie("token");
-    userTokenCookie.value = data.idToken;
-    useRouter().push("/");
+  function logout() {
+    tokenCookie.value = null;
+    userTokenCookie.value = null;
+    useRouter().push("/login");
   }
 
+  function getUser() {
+    return userTokenCookie.value;
+  }
   return {
     login,
-    register,
+    logout,
+    getUser,
   };
 };
