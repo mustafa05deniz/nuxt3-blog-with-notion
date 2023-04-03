@@ -8,9 +8,6 @@ const { logout } = useAuth();
 const auth = authStore();
 
 const { loggedIn } = storeToRefs(auth);
-watch(loggedIn, (val) => {
-  console.log("some changed", val);
-});
 </script>
 <template>
   <nav
@@ -29,7 +26,6 @@ watch(loggedIn, (val) => {
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div id="navbarsExample11" class="collapse navbar-collapse d-lg-flex">
         <a class="navbar-brand col-lg-3 me-0" href="#">Nuxt3 UI Sync</a>
         <ul class="navbar-nav col-lg-6 justify-content-lg-center">
@@ -40,7 +36,6 @@ watch(loggedIn, (val) => {
               </div>
             </NuxtLink>
           </li>
-
           <li class="nav-item">
             <NuxtLink to="/user">
               <div
@@ -48,6 +43,16 @@ watch(loggedIn, (val) => {
                 :class="checkActive('user') ? 'active' : ''"
               >
                 User
+              </div>
+            </NuxtLink>
+          </li>
+          <li class="nav-item">
+            <NuxtLink to="/about">
+              <div
+                class="nav-link"
+                :class="checkActive('about') ? 'active' : ''"
+              >
+                About
               </div>
             </NuxtLink>
           </li>

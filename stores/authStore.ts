@@ -9,10 +9,13 @@ export const authStore = defineStore("authStore", {
   },
   // optional actions
   actions: {
+    setUser(payload: any) {
+      this.user = payload;
+    },
     login(payload: any) {
       // `this` is the store instance
       this.loggedIn = true;
-      this.user = payload;
+      this.setUser(payload);
     },
     logOut() {
       this.loggedIn = false;

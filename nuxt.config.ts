@@ -36,6 +36,7 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  plugins: ["/plugins/server.ts"],
   vite: {
     server: {
       proxy: {
