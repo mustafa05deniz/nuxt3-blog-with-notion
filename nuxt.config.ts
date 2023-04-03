@@ -24,9 +24,18 @@ export default defineNuxtConfig({
       ],
     },
   },
-
+  imports: {
+    dirs: ["stores"],
+  },
   css: ["~/assets/style/main.scss", "bootstrap/dist/css/bootstrap.min.css"],
-
+  modules: [
+    [
+      "@pinia/nuxt",
+      {
+        autoImports: ["defineStore", "acceptHMRUpdate", "storeToRefs"],
+      },
+    ],
+  ],
   vite: {
     server: {
       proxy: {

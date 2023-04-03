@@ -4,8 +4,13 @@ const router = useRouter();
 function checkActive(param: string) {
   return router.currentRoute.value.path.split("/")[1] === param;
 }
-const { logout, getUser } = useAuth();
-const user = getUser();
+const { logout } = useAuth();
+const auth = authStore();
+
+const { loggedIn } = storeToRefs(auth);
+watch(loggedIn, (val) => {
+  console.log("some changed", val);
+});
 </script>
 <template>
   <nav
@@ -48,10 +53,10 @@ const user = getUser();
           </li>
         </ul>
         <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-          <NuxtLink v-if="!user" to="/login">
+          <NuxtLink v-if="!loggedIn" to="/login">
             <button class="btn btn-success">Login</button>
           </NuxtLink>
-          <NuxtLink v-if="user">
+          <NuxtLink v-if="loggedIn">
             <button class="btn btn-danger" @click="logout()">Logout</button>
           </NuxtLink>
         </div>

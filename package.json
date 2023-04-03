@@ -15,12 +15,14 @@
     "lintfix": "prettier --write --list-different . && npm run lint:js --fix"
   },
   "devDependencies": {
-    "nuxt": "3.0.0",
+    "@types/node": "^18.15.11",
+    "nuxt": "3.3.3",
     "sass": "^1.60.0"
   },
   "dependencies": {
     "@nuxtjs/eslint-config": "^12.0.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@pinia/nuxt": "^0.4.7",
     "@typescript-eslint/parser": "^5.57.0",
     "axios": "^1.3.4",
     "bootstrap": "^5.2.3",

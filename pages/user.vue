@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { authStore } from "@/stores/authStore";
 definePageMeta({
   middleware: ["auth"],
 });
@@ -10,7 +11,12 @@ defineNuxtComponent({
     };
   },
 });
-const user = useCookie<{ name: string }>("token");
+const auth = authStore();
+
+const { loggedIn, user } = storeToRefs(auth);
+watch(loggedIn, () => {
+  console.log("some changed", loggedIn);
+});
 </script>
 <template>
   <div>
