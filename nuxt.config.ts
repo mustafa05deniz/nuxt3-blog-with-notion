@@ -22,6 +22,9 @@ export default defineNuxtConfig({
           crossorigin: "anonymous",
         },
       ],
+      bodyAttrs: {
+        class: "light",
+      },
     },
   },
   imports: {
@@ -56,6 +59,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    defaultTheme: "light",
     public: {
       apiUrl: "",
     },

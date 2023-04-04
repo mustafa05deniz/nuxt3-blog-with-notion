@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar navbar-expand-lg bg-body-tertiary rounded"
+    class="navbar navbar-expand-lg bg-body-tertiary"
     aria-label="Thirteenth navbar example"
   >
     <div class="container-fluid">

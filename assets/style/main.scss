@@ -1,3 +1,24 @@
+@mixin lighten() {
+  --bgColor: #{$bgColor_light};
+  --textColor: #{$textColor_light};
+  --borderColor: #{$borderColor_light};
+  --headerBgColor: #{$headerBgColor_light};
+}
+
+@mixin darken() {
+  --bgColor: #{$bgColor_dark};
+  --textColor: #{$textColor_dark};
+  --borderColor: #{$borderColor_dark};
+  --headerBgColor: #{$headerBgColor_dark};
+}
+
+body.dark {
+  @include darken();
+}
+body.light {
+  @include lighten();
+}
+
 html,
 body {
   padding: 0;
@@ -16,4 +37,16 @@ body {
 a {
   text-decoration: none !important;
   font-size: 20px;
+}
+
+.navbar {
+  border-radius: 0 !important;
+  background-color: var(--headerBgColor) !important;
+
+  .navbar-brand {
+    color: var(--textColor) !important;
+  }
+  .navbar-nav .nav-link {
+    color: var(--textColor) !important;
+  }
 }
