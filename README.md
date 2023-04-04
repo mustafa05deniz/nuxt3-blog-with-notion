@@ -12,4 +12,6 @@
 <code>npm run install</code><br><br>
 <code>npm run dev</code>
 
+<img src="./nuxt3.png"></img>
+
 go to : <code>http://localhost:3000</code>
