@@ -2,12 +2,12 @@ export default defineNuxtPlugin(() => {
   const themeCookie: { value: { selectedTheme: string } } = useCookie("theme");
   useHead({
     bodyAttrs: {
-      class: themeCookie.value.selectedTheme,
+      class: themeCookie?.value?.selectedTheme,
     },
   });
   const { setTheme } = useTheme();
   if (themeCookie.value) {
-    setTheme({ value: themeCookie.value.selectedTheme });
+    setTheme({ value: themeCookie.value?.selectedTheme });
   }
   if (process.server) {
     const tokenCookie = useCookie("token");
