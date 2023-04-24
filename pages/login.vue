@@ -1,10 +1,21 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useAuth } from "~~/composable/useAuth";
 
 definePageMeta({
   layout: "login",
 });
 const { login } = useAuth();
+const { send } = useChannel();
+
+function logIn(form) {
+  const channelData = {
+    type: "auth",
+    subType: "login",
+    value: form.email,
+  };
+  send(channelData);
+  login(form);
+}
 
 const form = ref({
   email: "",
@@ -17,14 +28,14 @@ const form = ref({
     <main class="form-signin w-100 h-100 m-auto container">
       <div class="row">
         <div class="col-6 offset-3">
-          <form class="" @submit.prevent="login(form)">
+          <form class="" @submit.prevent="logIn(form)">
             <div class="form-floating">
               <input
                 id="floatingInput"
                 v-model="form.email"
-                type="email"
                 class="form-control"
                 placeholder="name@example.com"
+                type="email"
               />
               <label for="floatingInput">Email</label>
             </div>
@@ -32,15 +43,15 @@ const form = ref({
               <input
                 id="floatingPassword"
                 v-model="form.password"
-                type="password"
                 class="form-control my-3"
                 placeholder="Password"
+                type="password"
               />
               <label for="floatingPassword">Password</label>
             </div>
             <button
-              class="w-100 btn btn-lg btn-primary"
               :disabled="!(form.email && form.password)"
+              class="w-100 btn btn-lg btn-primary"
               type="submit"
             >
               Login

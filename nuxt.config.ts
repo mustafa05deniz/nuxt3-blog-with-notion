@@ -22,13 +22,17 @@ export default defineNuxtConfig({
           crossorigin: "anonymous",
         },
       ],
-      bodyAttrs: {
-        class: "light",
-      },
     },
   },
   imports: {
-    dirs: ["stores"],
+    dirs: [
+      "stores",
+      "composable",
+      // ... or scan modules nested one level deep with a specific name and file extension
+      "composable/*/index.{ts,js,mjs,mts}",
+      // ... or scan all modules within given directory
+      "composable/**",
+    ],
   },
   css: ["~/assets/style/main.scss", "bootstrap/dist/css/bootstrap.min.css"],
   modules: [

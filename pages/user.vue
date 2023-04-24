@@ -1,7 +1,10 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { storeToRefs } from "pinia";
 import { authStore } from "@/stores/authStore";
+import { themeStore } from "@/stores/themeStore";
 import { useTheme } from "~~/composable/useTheme";
+import { useChannel } from "~/composable/broadCastChannel";
+
 definePageMeta({
   middleware: ["auth"],
 });
@@ -13,17 +16,25 @@ defineNuxtComponent({
 });
 
 const theme = useTheme();
+const themes = themeStore();
 const auth = authStore();
+const broadCastChannel = useChannel();
+
 function changeTheme(event: any) {
+  let payload;
   if (event.target.checked) {
-    theme.setTheme({
-      selectedTheme: "dark",
-    });
+    payload = {
+      type: "theme",
+      value: "dark",
+    };
   } else {
-    theme.setTheme({
-      selectedTheme: "light",
-    });
+    payload = {
+      type: "theme",
+      value: "light",
+    };
   }
+  theme.setTheme(payload);
+  broadCastChannel.send(payload);
 }
 
 const { user } = storeToRefs(auth);
@@ -35,13 +46,14 @@ const { user } = storeToRefs(auth);
   >
     <h1 class="text-center">User</h1>
     <div class="d-flex justify-content-center align-items-center mt-5 pt-5">
-      {{ user }}
+      {{ user?.email }}
     </div>
     <div class="form-check form-switch">
       <input
+        v-model="themes.themeSwitch"
         class="form-check-input"
-        type="checkbox"
         role="switch"
+        type="checkbox"
         @change="changeTheme"
       />
       <label class="form-check-label" for="flexSwitchCheckChecked"

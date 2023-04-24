@@ -1,11 +1,12 @@
 {
   "name": "nuxt3-ui-sync",
-  "version": "1.0",
+  "version": "1.0.0",
   "author": "mustafa05deniz@gmail.com",
   "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --port=5678",
+    "install": "npm install",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
+    "@vueuse/core": "^10.0.2",
     "nuxt": "3.3.3",
     "sass": "^1.60.0"
   },
