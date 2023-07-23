@@ -43,7 +43,7 @@ export default defineNuxtConfig({
       },
     ],
   ],
-  plugins: ["/plugins/server.ts"],
+  plugins: ["/plugins/server.ts","./plugins/axios.ts"],
   vite: {
     server: {
       proxy: {
@@ -65,7 +65,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     defaultTheme: "light",
     public: {
-      apiUrl: "",
+      apiUrl: "https://api.notion.com/v1/",
     },
   },
 });

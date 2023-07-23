@@ -1,5 +1,15 @@
 import axios from "axios";
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig();
-  axios.defaults.baseURL = config.public.apiUrl;
+  let api = axios.create({
+    baseURL: config.public.apiUrl,
+    headers: {
+      common: {},
+    },
+  });
+  return {
+    provide: {
+      api: api,
+    },
+  };
 });

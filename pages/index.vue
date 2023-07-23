@@ -1,15 +1,22 @@
-<script setup lang="ts">
-definePageMeta({
-  middleware: ["auth"],
+<script setup lang="ts" >
+import { posts } from "~~/composable/posts";
+const { getData,postList } = posts();
+await useLazyAsyncData(async() => {
+  if (process.server) {
+    await getData()
+  }
 });
 </script>
-
 <template>
   <div>
-    <h1 class="text-center">Hello</h1>
+    <div v-if="postList && postList.length"  class="d-flex flex-column ">
+      <div class="p-3 bg-white my-2" v-for="post of postList" :key="post.id">
+       <h1> {{post.properties.title.rich_text[0].plain_text}}</h1>
+        <p>
+          {{post.properties.description.rich_text[0].plain_text}}
+        </p>
+      </div>
 
-    <div class="d-flex justify-content-center align-items-center mt-5 pt-5">
-      <div>hello</div>
     </div>
   </div>
 </template>

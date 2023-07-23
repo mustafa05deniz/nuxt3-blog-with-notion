@@ -17,7 +17,7 @@
       </button>
 
       <div id="navbarsExample11" class="collapse navbar-collapse d-lg-flex">
-        <a class="navbar-brand col-lg-3 me-0" href="#">Nuxt3 UI Sync</a>
+        <a class="navbar-brand col-lg-3 me-0" href="#">Nuxt3 Notion Blog</a>
       </div>
     </div>
   </nav>
