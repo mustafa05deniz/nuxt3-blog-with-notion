@@ -20,10 +20,10 @@ export const postStore = defineStore("postStore", {
       try {
         const postList = await axios({
           method: 'post',
-          url:'https://api.notion.com/v1/databases/a19f8282a2b8423dbbef0c41906a78ca/query',
+          url:'https://api.notion.com/v1/databases/db_id/query',
           headers: {
             'Notion-Version':'2022-06-28',
-            'Authorization':'Bearer secret_vhebF6jMmoJhprs0BnPQq6qBWMoLz7VbouZm1q8yIkl',
+            'Authorization':'Bearer secret____',
             'Access-Control-Allow-Origin':'*',
             'Content-Type': 'application/json'
           },
