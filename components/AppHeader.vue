@@ -3,7 +3,6 @@ const router = useRouter();
 function checkActive(param: string) {
   return router.currentRoute.value.path.split("/")[1] === param;
 }
-
 </script>
 <template>
   <nav
