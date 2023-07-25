@@ -11,16 +11,6 @@
 - sass
 - Boostrap
 
-## Config
-
-Change .env file
-
-```bash
-NOTION_SECRET_TOKEN=YOUR_NOTION_SECRET
-NOTION_DATABASE_ID=YOUR_NOTION_DATABASE_ID
-NOTION_VERSION=NOTION_VERSION
-```
-
 ## Installation
 
 ```bash
@@ -31,9 +21,21 @@ npm install
 npm run dev
 ```
 
+## Config
+
+Change .env file
+
+```bash
+notion_db_token       =   YOUR_NOTION_SECRET
+notion_version        =   YOUR_NOTION_DATABASE_ID
+notion_secret_token   =   NOTION_VERSION
+```
+
+
+
 ## Live
 
-- [https://mustafa05deniz-nuxt3-blog-with-notion.vercel.app/](https://mustafa05deniz-nuxt3-blog-with-notion.vercel.app/)
+- [https://nuxt3-blog-with-notion-jbgf59666-mustafa05deniz.vercel.app//](https://nuxt3-blog-with-notion-jbgf59666-mustafa05deniz.vercel.app//)
 - [http://localhost:3000](http://localhost:3000)
 
 ## Article
