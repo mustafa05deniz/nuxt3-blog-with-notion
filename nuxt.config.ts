@@ -61,7 +61,6 @@ export default defineNuxtConfig({
       },
     },
   },
-
   runtimeConfig: {
     defaultTheme: "light",
     public: {

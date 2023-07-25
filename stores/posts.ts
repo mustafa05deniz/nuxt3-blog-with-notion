@@ -1,8 +1,3 @@
-
-import {Client} from '@notionhq/client'
-const notion = new Client({ auth: 'secret_1hTrt4c11DWaC7cBsWJOem9VpV7HziaCcXHmVeSVDZu' });
-
-
 import axios from "axios";
 
 export const postStore = defineStore("postStore", {
@@ -20,10 +15,10 @@ export const postStore = defineStore("postStore", {
       try {
         const postList = await axios({
           method: 'post',
-          url:'https://api.notion.com/v1/databases/db_id/query',
+          url:`https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID}/query`,
           headers: {
-            'Notion-Version':'2022-06-28',
-            'Authorization':'Bearer secret____',
+            'Notion-Version': process.env.NOTION_VERSION,
+            'Authorization': `Bearer ${process.env.NOTION_SECRET_TOKEN}`,
             'Access-Control-Allow-Origin':'*',
             'Content-Type': 'application/json'
           },
