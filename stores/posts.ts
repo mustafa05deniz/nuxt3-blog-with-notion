@@ -1,8 +1,7 @@
+
+import {Client} from '@notionhq/client'
 import axios from "axios";
-
 export const postStore = defineStore("postStore", {
-
-  
   state: () => ({
     postList : null
   }),

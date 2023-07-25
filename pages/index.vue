@@ -12,11 +12,10 @@ await useLazyAsyncData(async() => {
     <div v-if="postList && postList.length"  class="d-flex flex-column ">
       <div class="p-3 bg-white my-2" v-for="post of postList" :key="post.id">
        <h1> {{post.properties.title.rich_text[0].plain_text}}</h1>
-        <p>
+        <p v-if="post && post.properties && post.properties.description && post.properties.description.rich_text[0] && post.properties.description.rich_text[0].plain_text">
           {{post.properties.description.rich_text[0].plain_text}}
         </p>
       </div>
-
     </div>
   </div>
 </template>
