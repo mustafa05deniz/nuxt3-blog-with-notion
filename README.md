@@ -35,7 +35,7 @@ notion_secret_token   =   NOTION_VERSION
 
 ## Live
 
-- [https://nuxt3-blog-with-notion-jbgf59666-mustafa05deniz.vercel.app//](https://nuxt3-blog-with-notion-jbgf59666-mustafa05deniz.vercel.app//)
+- [https://nuxt3-blog-with-notion-jbgf59666-mustafa05deniz.vercel.app//](https://nuxt3-blog-with-notion.vercel.app///)
 - [http://localhost:3000](http://localhost:3000)
 
 ## Article
