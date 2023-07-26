@@ -45,3 +45,4 @@ notion_secret_token   =   NOTION_VERSION
 ## Preview
 
 ![./nuxt3-blog.png](./nuxt3-blog.png)
+![./nuxt3-blog.png](./new-page.png)
