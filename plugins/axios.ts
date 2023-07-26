@@ -1,15 +1,11 @@
 import axios from "axios";
-export default defineNuxtPlugin(() => {
-  const config = useRuntimeConfig();
-  let api = axios.create({
-    baseURL: config.public.apiUrl,
-    headers: {
-      common: {},
-    },
-  });
+
+export default defineNuxtPlugin((NuxtApp) => {
+  axios.defaults.withCredentials = true;
+  axios.defaults.baseURL = 'https://api.notion.com/v1'
   return {
     provide: {
-      api: api,
+      axios: axios
     },
-  };
-});
+  }
+})

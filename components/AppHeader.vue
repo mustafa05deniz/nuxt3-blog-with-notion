@@ -31,13 +31,6 @@ function checkActive(param: string) {
               </div>
             </NuxtLink>
           </li>
-          <li class="nav-item">
-            <NuxtLink to="/">
-              <div :class="checkActive('') ? 'active' : ''" class="nav-link">
-                Posts
-              </div>
-            </NuxtLink>
-          </li>
         </ul>
       </div>
     </div>
