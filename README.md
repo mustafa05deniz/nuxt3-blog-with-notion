@@ -31,16 +31,17 @@ notion_version        =   YOUR_NOTION_DATABASE_ID
 notion_secret_token   =   NOTION_VERSION
 ```
 
-
-
 ## Live
 
-- [https://nuxt3-blog-with-notion-jbgf59666-mustafa05deniz.vercel.app//](https://nuxt3-blog-with-notion.vercel.app///)
+- [https://nuxt3-blog-with-notion.vercel.app/](https://nuxt3-blog-with-notion.vercel.app/)
+
+## Test
+
 - [http://localhost:3000](http://localhost:3000)
 
 ## Article
 
-- [https://medium.com/@mustafa05deniz/notion-ile-kendi-blog-sayfan%C4%B1z%C4%B1-yapabilirsiniz-dbaa922b10e](Medium Article | Turkish)
+- [Medium Article | Turkish](https://medium.com/@mustafa05deniz/notion-ile-kendi-blog-sayfan%C4%B1z%C4%B1-yapabilirsiniz-dbaa922b10e)
 
 ## Preview
 
